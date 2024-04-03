@@ -3,9 +3,8 @@ import logo_dark from '@/assets/icons/logo_dark.svg';
 import fb_icon from '@/assets/icons/icon_facebook.svg';
 import inst_icon from '@/assets/icons/icon_instagram.svg';
 import { useTranslation } from 'react-i18next';
-import { useAppDispatch, useAppSelector } from '@/store/hook';
+import { useAppDispatch } from '@/store/hook';
 import { fetchPdfs } from '@/store/slices/pdfSlice';
-import { createPdfUrl } from '@/utils/createFileUrl';
 
 const publicDocuments = [
   {
@@ -34,8 +33,6 @@ const Footer = () => {
     }
     return title;
   };
-
-  const documents = useAppSelector((state) => state.pdf.documents);
 
   const anchorLinks = [
     { title: t('footer:anchor_links.about_us'), href: '#about-us' },
