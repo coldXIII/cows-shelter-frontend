@@ -19,8 +19,6 @@ import AddReviews from './pages/admin/reviews/add';
 import EditReviews from './pages/admin/reviews/edit';
 import NewPassword from './pages/admin/login/newPassword';
 import ResetPassword from './pages/admin/login/resetPassword';
-import Pdf from './pages/admin/pdf';
-import PdfDisplay from './pages/PdfDisplay';
 import AddContacts from './pages/admin/contacts/add';
 import Register from './pages/admin/login/register';
 
@@ -31,7 +29,6 @@ const App = () => {
       <Route path="login" element={<SignIn />} />
       <Route path="register-user-only-for-developers" element={<Register />} />
       <Route path="reset/:token" element={<ResetPassword />} />
-      <Route path="pdf/:id" element={<PdfDisplay />} />
       <Route element={<ProtectedRoute />}>
         <Route path="admin/*" element={<AdminPage />}>
           <Route index element={<News />} />
@@ -50,7 +47,6 @@ const App = () => {
           <Route path="contacts" element={<Contacts />} />
           <Route path="contacts/add" element={<AddContacts />} />
           <Route path="newpaswword" element={<NewPassword />} />
-          <Route path="pdf" element={<Pdf />} />
         </Route>
       </Route>
     </Routes>

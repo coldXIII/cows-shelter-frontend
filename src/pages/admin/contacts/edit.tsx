@@ -37,6 +37,8 @@ const Edit = ({ setIsModalOpen, data, id }: EditContactsProps) => {
     defaultValues: {}
   });
 
+  console.log(data);
+
   useEffect(() => {
     const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
     if (emailRegex.test(data)) {
@@ -45,6 +47,8 @@ const Edit = ({ setIsModalOpen, data, id }: EditContactsProps) => {
       setCurrentType('phone');
     }
   }, [data, setValue]);
+
+  console.log(currentType);
 
   const onSubmit: SubmitHandler<ContactsFormInput> = async (
     values: ContactsFormInput

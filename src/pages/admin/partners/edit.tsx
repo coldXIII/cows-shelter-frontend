@@ -167,7 +167,7 @@ const EditPartner = () => {
                 className="mb-5 h-[205px] w-[205px] rounded-full"
               />
               <h2
-                className={` bottom-4 left-2 mb-6 text-center text-xl font-bold
+                className={`bottom-4 left-2 mb-6 text-center text-xl font-bold
                 `}
               >
                 {currentValues.name}

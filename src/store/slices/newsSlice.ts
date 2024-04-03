@@ -129,7 +129,7 @@ export const editPost = createAsyncThunk(
         const file = newsData.values.image[0];
         const formData = new FormData();
         formData.append('file', file);
-        const { data } = await axios.post('api/news/upload', formData);
+        const { data } = await axios.post('api/upload-image', formData);
         const newPost = {
           title_ua: newsData.values.titleUa,
           title_en: newsData.values.titleEn,

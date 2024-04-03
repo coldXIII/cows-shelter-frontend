@@ -132,7 +132,7 @@ export const editExcursion = createAsyncThunk(
         const file = excursionsData.values.image[0];
         const formData = new FormData();
         formData.append('file', file);
-        const { data } = await axios.post('api/excursions/upload', formData);
+        const { data } = await axios.post('api/upload-image', formData);
         const newExcursion = {
           title_ua: excursionsData.values.titleUa,
           title_en: excursionsData.values.titleEn,

@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import { useAppDispatch } from '@/store/hook';
 import { closeModal } from '@/store/slices/modalSlice';
+import { createImgUrl } from '@/utils/createFileUrl';
 
 import LightBoxArrowLeft from '@/components/icons/LightBoxArrowLeft';
 import LightBoxArrowRight from '@/components/icons/LightBoxArrowRight';
@@ -54,7 +55,10 @@ const LightBox = ({ images, image }: LightBoxProps) => {
               key={index}
             >
               <div className="relative max-h-[480px] w-[480px] lg:max-h-[590px] lg:w-[590px]">
-                <img src={image.image_url} className="w-full object-cover" />
+                <img
+                  src={createImgUrl(image.image_url)}
+                  className="w-full object-cover"
+                />
                 <div
                   onClick={() => setShowModal(true)}
                   className="absolute bottom-2 right-2 flex cursor-pointer items-center justify-center rounded-full p-2 hover:bg-[rgba(150,150,150,0.5)]"

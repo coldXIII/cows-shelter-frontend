@@ -8,7 +8,7 @@ import ResponseAlert from '@/components/admin/ResponseAlert';
 
 const Contacts = () => {
   const dispatch = useAppDispatch();
-  const [data, setData] = useState('');
+  const [modalData, setModalData] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
   const contacts = useAppSelector((state) => state.contacts.contacts);
   const isLoading = useAppSelector((state) => state.posts.loading);
@@ -31,7 +31,7 @@ const Contacts = () => {
         <div className="flex w-full ">
           <button
             onClick={() => {
-              setData(contacts[0]?.email), setIsModalOpen(true);
+              setModalData('cold@mail.ua'), setIsModalOpen(true);
             }}
             className="w-full border border-darkgray  bg-lightgrey px-[4.65rem] py-2 text-xl text-black hover:text-accent"
           >
@@ -47,7 +47,7 @@ const Contacts = () => {
         <div className="flex bg-lightgrey">
           <button
             onClick={() => {
-              setData(contacts[0]?.phone), setIsModalOpen(true);
+              setModalData(contacts[0]?.phone), setIsModalOpen(true);
             }}
             className="w-full border border-darkgray px-[4.65rem] py-2 text-xl text-black hover:text-accent"
           >
@@ -58,7 +58,7 @@ const Contacts = () => {
       {isModalOpen && (
         <Edit
           setIsModalOpen={setIsModalOpen}
-          data={data}
+          data={modalData}
           id={contacts[0]?.id}
         />
       )}

@@ -7,6 +7,19 @@ import { useAppDispatch, useAppSelector } from '@/store/hook';
 import { fetchPdfs } from '@/store/slices/pdfSlice';
 import { createPdfUrl } from '@/utils/createFileUrl';
 
+const publicDocuments = [
+  {
+    id: '123',
+    title: 'Правила Користування Сайтом',
+    url: '/documents/правила-користування-сайтом.pdf'
+  },
+  {
+    id: '456',
+    title: 'Політика Конфіденційності',
+    url: '/documents/політика-конфіденційності.pdf'
+  }
+];
+
 const Footer = () => {
   const { t, i18n } = useTranslation();
   const language = i18n.language;
@@ -23,8 +36,6 @@ const Footer = () => {
   };
 
   const documents = useAppSelector((state) => state.pdf.documents);
-
-  console.log(documents);
 
   const anchorLinks = [
     { title: t('footer:anchor_links.about_us'), href: '#about-us' },
@@ -92,11 +103,11 @@ const Footer = () => {
             <div className="flex flex-col gap-3">
               <h3 className="title-text"> {t('footer:documents')} </h3>
               <ul className="flex flex-col gap-2">
-                {documents && Array.isArray(documents) ? (
-                  documents.map((document) => (
+                {publicDocuments && Array.isArray(publicDocuments) ? (
+                  publicDocuments.map((document) => (
                     <li key={document.id}>
                       <a
-                        href={createPdfUrl(document.document_url)}
+                        href={document.url}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="default-text"
@@ -240,11 +251,11 @@ const Footer = () => {
               <li className="flex flex-col gap-3">
                 <h3 className="title-text"> {t('footer:documents')} </h3>
                 <ul className="flex flex-col gap-2">
-                  {documents && Array.isArray(documents) ? (
-                    documents.map((document) => (
+                  {publicDocuments && Array.isArray(publicDocuments) ? (
+                    publicDocuments.map((document) => (
                       <li key={document.id}>
                         <a
-                          href={createPdfUrl(document.document_url)}
+                          href={document.url}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="default-text"
@@ -323,11 +334,11 @@ const Footer = () => {
             <div className="flex flex-col gap-3">
               <h3 className="title-text"> {t('footer:documents')} </h3>
               <ul className="flex flex-col gap-2">
-                {documents && Array.isArray(documents) ? (
-                  documents.map((document) => (
+                {publicDocuments && Array.isArray(publicDocuments) ? (
+                  publicDocuments.map((document) => (
                     <li key={document.id}>
                       <a
-                        href={createPdfUrl(document.document_url)}
+                        href={document.url}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="default-text"

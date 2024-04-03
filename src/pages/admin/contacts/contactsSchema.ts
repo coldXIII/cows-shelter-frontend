@@ -10,7 +10,8 @@ export const contactsValidation = z.object({
       {
         message: 'Введіть коректну адресу електронної пошти'
       }
-    ),
+    )
+    .optional(),
 
   phone: z
     .string({ required_error: 'Поле повинно бути заповнене' })
@@ -19,4 +20,5 @@ export const contactsValidation = z.object({
     .refine((value) => /^\+380\s\d{3}\s\d{3}\s\d{3}$/.test(value), {
       message: 'Формат номеру телефону +380 *** *** ***'
     })
+    .optional()
 });

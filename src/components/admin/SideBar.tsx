@@ -36,11 +36,6 @@ const links = [
     icon: 'contacts'
   },
   {
-    name: 'PDF Документи',
-    path: 'pdf',
-    icon: 'pdf'
-  },
-  {
     name: 'Зміна пароля',
     path: 'newpaswword',
     icon: 'password'
