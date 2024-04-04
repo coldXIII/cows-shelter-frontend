@@ -86,7 +86,7 @@ export const addNewPartner = createAsyncThunk(
       const file = values.logo[0];
       const formData = new FormData();
       formData.append('file', file);
-      const { data } = await axios.post('api/partners/upload', formData);
+      const { data } = await axios.post('api/upload-image', formData);
       const newPartner = {
         name: values.name,
         link: values.link,
@@ -108,7 +108,7 @@ export const editPartner = createAsyncThunk(
         const file = partnersData.values.logo[0];
         const formData = new FormData();
         formData.append('file', file);
-        const { data } = await axios.post('api/partners/upload', formData);
+        const { data } = await axios.post('api/upload-image', formData);
         const newPartner = {
           name: partnersData.values.name,
           link: partnersData.values.link,

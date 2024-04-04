@@ -55,7 +55,7 @@ const SideBar = () => {
     setIsLoader(true);
     localStorage.removeItem('user');
     setIsLoader(false);
-    navigate('/');
+    navigate('https://zdrave-zyttia.site/');
   };
 
   return (
